@@ -41,6 +41,7 @@ Automatic settings:
 
 Example of use:
 
+```
 miguel@pringle:~/ponomarenko$ ./ponomarenko -m1 lena.png
 97.556854  20.464422  65.181114  2.571376  3.398507  3.328110  
 161.822037  65.409187  77.526772  2.248434  3.205869  3.068921  
@@ -48,6 +49,7 @@ miguel@pringle:~/ponomarenko$ ./ponomarenko -m1 lena.png
 208.454453  108.978432  110.369133  1.510017  2.607002  4.128088  
 221.517090  134.267456  125.007042  1.280891  2.381180  4.175092  
 240.984161  203.753891  181.479172  0.807139  1.327316  3.185435
+```
 
 The first three columns are the means of the noise curves. The last three the corresponding standard deviations. This format is directly compatible with gnuplot.
 
