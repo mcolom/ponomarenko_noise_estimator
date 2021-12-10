@@ -26,6 +26,7 @@ The ponomarenko program is able to read 8/16 bits PNG files and also float image
 
 The usage of the program and the default values are the following:
 
+```
 usage: ponomarenko [-w w] [-p p] [-r] [-b b] [-g g] [-m m]  input 
 	-w  w	 Block side (Default: 8)
 	-p  p	 Percentile (Default: 0.005)
@@ -34,6 +35,7 @@ usage: ponomarenko [-w w] [-p p] [-r] [-b b] [-g g] [-m m]  input
 	-g  g	 Filter curve iterations (Default: 2)
 	-m  m	 Mean computation method (Default: 2)
 	input	 input file
+```
 
 Automatic settings:
 - Setting the percentile to 0 means that the original loop of the Ponomarenko algorithm will be used.
