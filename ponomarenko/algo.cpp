@@ -178,16 +178,18 @@ void read_all_valid_blocks(float *D,
                            int Nx, int Ny,
                            int w, unsigned num_blocks, int *mask) {  
   if (mask == NULL) {
-    #ifdef _OPENMP
-    #pragma omp parallel for
-    #endif
-    for (unsigned q = 0; q < num_blocks; q++) {
-      for (int j = 0; j < w; j++) {
-        for (int i = 0; i < w; i++) {
-            D[q*w*w+j*w+i] = u[j*Nx+i+q];
+    const int w2 = w * w;
+    int q = 0;
+    for (int y = 0; y < Ny - w + 1; ++y) {
+      for (int x = 0; x < Nx - w + 1; ++x) {
+        for (int j = 0; j < w; ++j) {
+          for (int i = 0; i < w; ++i) {
+            D[q*w2+j*w+i] = u[(j+y)*Nx+i+x];
+          }
         }
+        ++q;
       }
-    }    
+    }
   }
   else {
     unsigned *valid_coords = new unsigned[num_blocks];
